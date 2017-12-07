@@ -9,11 +9,11 @@
 
 char palavra[30],dica[50],palEscondida[30],letra;
 char facil[][30]={"Barack Hussein Obama","Maquiavel","Mickey Mouse","duzentos e cinquenta","interrogacao","logradouro","Exercito Brasileiro","Carnaval"};
-char dicaF[][50]={"presidente dos Estados Unidos de 2009 a 2017","autor de O PrÌncipe","principal personagem da Disney","anos em dois sÈculos e meio","sinal indicativo de pergunta","rua p˙blica","missao de paz no haiti","principal evento comemorado no brasil"};
+char dicaF[][50]={"presidente dos Estados Unidos de 2009 a 2017","autor de O Pr√≠ncipe","principal personagem da Disney","anos em dois s√©culos e meio","sinal indicativo de pergunta","rua p√∫blica","missao de paz no haiti","principal evento comemorado no brasil"};
 char medio[][30]={"linguagem de programacao","matematica","Renascimento","Russia","lenda","Pablo Picasso","Hades","francesa"};
-char dicaM[][50]={"comunicaÁ„o de instruÁıes para um computador","ciÍncia do raciocÌnio lÛgico e abstrato","perÌodo da histÛria da Europa","maior paÌs do mundo","significado de legend","autor da obra Guernica","deus grego","nacionalidade do sociÛlogo e filÛsofo Durkheim"};
+char dicaM[][50]={"comunica√ß√£o de instru√ß√µes para um computador","ci√™ncia do racioc√≠nio l√≥gico e abstrato","per√≠odo da hist√≥ria da Europa","maior pa√≠s do mundo","significado de legend","autor da obra Guernica","deus grego","nacionalidade do soci√≥logo e fil√≥sofo Durkheim"};
 char dificil[][30]={"Descartes","ciclone tropical","Guinea Bissau","Brasil","trilhares","paleolitico","mitologia","Brexit"};	
-char dicaD[][50]={"frase Penso logo existo!","pertubaÁ„o na atmosfera terrestre","um dos paÌses mais pobres do mundo","local da invencao do chuveiro elÈtrico","casas decimais do n˙mero pi","periodo prÈ-histÛrico de descoberta do fogo","esplicacao da origem das coisas","saida do Reino Unido da Uni„o Europeia"}; 
+char dicaD[][50]={"frase Penso logo existo!","pertuba√ß√£o na atmosfera terrestre","um dos pa√≠ses mais pobres do mundo","local da inven√ß√£o do chuveiro el√©trico","casas decimais do n√∫mero pi","periodo pr√©-hist√≥rico","explica√ß√£o da origem das coisas","saida do Reino Unido da Uni√£o Europeia"}; 
 
 int chance,x;
 int nivel;
@@ -124,13 +124,13 @@ void logo(){
 }
 
 void dificuldade(){
-	printf("\n\n Selecione o nÌvel de dificuldade: \n");
-	printf(" 1- F¡CIL     2- M…DIO      3- DIFÕCIL\n");
+	printf("\n\n Selecione o n√≠vel de dificuldade: \n");
+	printf(" 1- F√ÅCIL     2- M√âDIO      3- DIF√çCIL\n");
 	scanf("%d",&nivel);
 	fflush(stdin);
 	do{
 		if(nivel!=1&&nivel!=2&&nivel!=3){
-			printf("INV¡LIDO, POR FAVOR DIGITE NOVAMENTE: ");
+			printf("INV√ÅLIDO, POR FAVOR DIGITE NOVAMENTE: ");
 			scanf("%d",&nivel);
 			fflush(stdin);
 		}	
@@ -215,7 +215,7 @@ void logica(){
 		forca();
 		x=0;
 		printf("\n\nDICA: %s\n",dica);
-		printf("\nLETRAS N√O UTILIZADAS: \n");
+		printf("\nLETRAS N√ÉO UTILIZADAS: \n");
 		for(int z=0;z<=25;z++){
 			printf(" %c",alfabeto[z]);
 		}
@@ -227,7 +227,7 @@ void logica(){
 			for(int a=0;a<=25;a++){
 				if(letra==alfabeto[a]||tolower(letra)==alfabeto[a]||toupper(letra)==alfabetoM[a]||letra==alfabetoM[a]){
 					if(alfabeto[a]=='*'){
-						printf("EST¡ LETRA J¡ FOI UTILIZADA!");
+						printf("EST√Å LETRA J√Å FOI UTILIZADA!");
 					}else{
 						alfabeto[a]='*';
 						letraRepetida=false;
@@ -235,7 +235,7 @@ void logica(){
 				}
 			}
 			if(isdigit(letra)){
-				printf("\nVOC  N√O DIGITOU UMA LETRA!\n");
+				printf("\nVOC√ä N√ÉO DIGITOU UMA LETRA!\n");
 			}
 		}while(letraRepetida==true);
 		system("cls");
@@ -254,7 +254,7 @@ void logica(){
 				gameOver();
 				break;
 			}else{
-				printf("\n VOC  ERROU! AINDA RESTAM %d CHANCES\n",chance); 
+				printf("\n VOC√ä ERROU! AINDA RESTAM %d CHANCES\n",chance); 
 			}
 		}else{
 			printf("\n A LETRA (%c) PERTENCE A PALAVRA!\n\n",letra);
@@ -264,7 +264,7 @@ void logica(){
 			printf("\n\n*****");
 			printf("%s",palavra);
 			printf("*****\n\n");
-			printf("\n VOC  DESCOBRIU A PALAVRA SECRETA, PARAB…NS!\n\n");
+			printf("\n VOC√ä DESCOBRIU A PALAVRA SECRETA, PARAB√âNS!\n\n");
 			chance=0;
 			Sleep(3000);
 			wins();
@@ -286,7 +286,7 @@ do{
 	logica();
 	do{
 		printf("Deseja jogar novamente? ");
-		printf("1- SIM   2- N√O ");
+		printf("1- SIM   2- N√ÉO ");
 		scanf("%d",&jogar);
 		fflush(stdin);
 	}while(jogar!=1&&jogar!=2);
